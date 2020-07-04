@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background: url("../img/fondo.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header {
+    width: 100%;
+    margin: auto;
+    position: relative;
+    top: 0;
+}
+
+header nav {
+    width: 100%;
+    margin: 0px auto;
+    background: rgb(20, 20, 20);
+}
+
+header nav>.menu {
+    color: #ffffff;
+    overflow: hidden;
+}
+
+header nav>.menu span {
+    font-size: 35px;
+    padding: 20px;
+    margin: auto;
+    float: left;
+}
+
+header nav>.menu span a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+header nav>.menu span a:hover {
+    color: darkgreen;
+    transition: 400ms;
+}
+
+header nav>.menu .titulo {
+    float: right;
+    margin: 15px auto;
+    
+}
+
+header nav>.menu .user {
+    margin: 2px 20px auto;
+    background: #ffffff;
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+    padding: 10px;
+    overflow: hidden;
+    float: right;
+    border: 5px solid rgb(20, 20, 20);
+    display: flex;
+}
+
+header nav>.menu .user img {
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+    text-align: center;
+    margin: -15px -15px;
+}
+
+header nav>.contenedor {
+    background: rgb(20, 20, 20);
+}
+
+header nav>.contenedor h3 {
+    border-bottom: 1px solid white;
+    color: white;
+    margin: 2px auto;
+    text-align: center;
+}
+
+header nav>.contenedor>ul {
+    margin: auto;
+}
+
+header nav>.contenedor>ul>li {
+    list-style: none;
+    border-bottom: 1px solid white;
+}
+
+header nav>.contenedor>ul>.footer {
+    margin-top: 200%;
+}
+
+header nav>.contenedor ul>li>a {
+    text-decoration: none;
+    margin: auto;
+    padding: 15px;
+    font-size: 20px;
+    font-family: 'Staatliches', cursive;
+    color: #ffffff;
+    width: 100%;
+    display: block;
+}
+
+header nav>.contenedor ul>li>.user {
+    width: 70px;
+    height: 70px;
+    border-radius: 100px;
+    text-align: center;
+    margin: -15px -15px;
+}
+
+header nav>.contenedor ul>li>a:hover {
+    background: darkgreen;
+
+}
+
+table {
+    justify-content: center;
+    justify-items: center;
+    margin: 5% auto;
+    width: 60%;
+    background: rgba(161, 161, 161, 0.445);
+    border-radius: 20px;
+    padding: 20px;
+    font-family: 'Staatliches', cursive;
+}
+
+table thead {
+    margin: 5px auto;
+}
+
+table thead tr th {
+    padding: 10px;
+    background: rgb(34, 34, 34);
+    color: white;
+}
+
+table tbody {
+    color: white;
+}
+
+table tbody tr {
+    margin: 10px auto;
+}
+
+table tbody tr td {
+    text-align: center;
+    padding: 10px;
+    background: rgba(175, 175, 175, 0.445);
+}
+table .modi, .eli{
+    color: black;
+    text-decoration: none;   
+}
+table .eli:hover{
+    color: darkslateblue;
+    transition: 600ms;
+    
+}
+table .modi:hover{
+    color: darkslateblue;
+    transition: 600ms;
+    
+}
+
+@media screen and (max-width:1000px) {
+    table {
+        width: 80%;
+        border-radius: 15px;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width:800px) {
+    header nav>.contenedor>ul>.footer {
+        margin-top: 180%;
+    }
+    header nav>.menu .titulo {
+        display: none;
+    }
+}
+
+@media screen and (max-width:600px) {
+    table {
+        width: 100%;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 12px;
+    }
+    table thead tr th {
+        padding: 5px;
+    }
+    table tbody tr td {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width:400px) {
+    table {
+        width: 100%;
+        border-radius: 10px;
+        font-size: 8px;
+    }
+    table thead tr th {
+        padding: 5px;
+    }
+    table tbody tr td {
+        padding: 5px;
+    }
+}

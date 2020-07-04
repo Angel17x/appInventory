@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background: url("../img/fondo.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+
+header {
+    width: 100%;
+    margin: auto;
+    position: relative;
+    top: 0;
+}
+
+header nav {
+    width: 100%;
+    margin: 0px auto;
+    background: rgb(20, 20, 20);
+}
+
+header nav>.menu {
+    display: none;
+}
+
+header nav>ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    margin: auto;
+}
+
+header nav>ul li {
+    list-style: none;
+}
+
+header nav>ul li a {
+    text-decoration: none;
+    padding: 20px;
+    margin: 0px;
+    font-size: 20px;
+    font-family: 'Staatliches', cursive;
+    color: #ffffff;
+}
+
+header nav>ul li span {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+header nav>ul li a:hover {
+    background: rgba(212, 212, 212, 0.445);
+    transition: 500ms;
+}
+
+.form {
+    width: 40%;
+    margin: 15% auto;
+    justify-content: center;
+    justify-items: center;
+    background: rgba(20, 20, 20, 0.774);
+    padding: 20px;
+    border-radius: 20px;
+    font-family: 'Staatliches', cursive;
+}
+
+.form h3 {
+    text-align: center;
+    display: block;
+    margin: auto;
+    font-size: 20px;
+    color: aliceblue;
+    letter-spacing: 1px;
+}
+
+.form input[type="text"],
+input[type="password"] {
+    display: block;
+    padding: 10px;
+    margin: 10px auto;
+    width: 50%;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    background: transparent;
+    color: #ffffff;
+}
+
+.form input[placeholder] {
+    padding-left: 50px;
+}
+
+.form input[type="submit"] {
+    display: block;
+    width: 25%;
+    padding: 10px 20px 10px 20px;
+    margin: 30px auto;
+    border: 4px solid darkgreen;
+    background: rgba(19, 19, 19, 0.445);
+    font-family: 'Staatliches', cursive;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.form input[type="submit"]:hover {
+    background: darkgreen;
+    color: white;
+    transition: 500ms;
+}
+
+.form span {
+    position: relative;
+    top: -38px;
+    left: 28%;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.form a {
+    text-align: center;
+    color: #ffffff;
+    display: block;
+    margin: 10px auto;
+}
+
+.form a:hover {
+    color: darkgreen;
+    transition: 300ms;
+}
+
+.form .error{
+    margin-top: -80px;
+    margin-left: 400px;
+    z-index: 100;
+    background: darkred;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    position: absolute;
+    display: none;
+}
+
+header nav>.contenedor {
+    background: rgb(20, 20, 20);
+}
+
+header nav>.contenedor>ul {
+    margin: auto;
+}
+
+header nav>.contenedor>ul>li {
+    list-style: none;
+    border-bottom: 1px solid white;
+}
+
+header nav>.contenedor ul>li>a {
+    text-decoration: none;
+    margin: auto;
+    padding: 15px;
+    font-size: 20px;
+    font-family: 'Staatliches', cursive;
+    color: #ffffff;
+    width: 100%;
+    display: block;
+}
+
+header nav>.contenedor ul>li>a:hover {
+    background: darkgreen;
+}
+@media screen and (max-width: 1200px){
+    .form .error{
+        margin-left: 350px;
+        
+    }
+}
+@media screen and (max-width: 1100px){
+    .form .error{
+        margin-left: 300px;
+        
+    }
+}
+@media screen and (max-width:1000px) {
+    .form {
+        width: 90%;
+    }
+    .form input[type="text"],
+    input[type="password"] {
+        width: 80%;
+    }
+    .form span {
+        left: 12%;
+    }
+    .form input[type="submit"] {
+        width: 80%;
+    }
+    .form .error{
+            margin-left: 60%;
+            
+      
+    
+}
+
+@media screen and (max-width:800px) {
+    header nav>ul {
+        display: none;
+    }
+    header nav>.menu {
+        display: flex;
+        color: #ffffff;
+    }
+    header nav>.menu span {
+        font-size: 35px;
+        padding: 20px;
+    }
+    header nav>.menu span a {
+        text-decoration: none;
+        color: #ffffff;
+    }
+    header nav>.menu span a:hover {
+        color: darkgreen;
+        transition: 400ms;
+    }
+    .form .error{
+        margin-left: 50%;
+        
+    }
+}
+
+@media screen and (max-width:600px) {
+    .form {
+        width: 90%;
+    }
+    .form input[type="text"],
+    input[type="password"] {
+        width: 80%;
+    }
+    .form span {
+        left: 14%;
+    }
+    .form input[type="submit"] {
+        width: 80%;
+    }
+}
