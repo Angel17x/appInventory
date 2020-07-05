@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos2.css">
+    <link rel="stylesheet" href="css/font.google.css">
     <script src="js/all.min.js"></script>
     <title>Recuperar Contraseña</title>
 </head>
@@ -14,6 +15,7 @@
        <input type="email" name="correo" placeholder="ingresa tu correo">
        <span><i class="fas fa-envelope"></i></span>
        <input type="submit" name="Enviar" value="Enviar al Correo">
+       <a href="index.php">Regresar a login</a>
    </form>
    </div>
 </body>

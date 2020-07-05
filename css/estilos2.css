@@ -28,13 +28,19 @@ header nav {
 header nav>.menu {
     color: #ffffff;
     overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
 
 header nav>.menu span {
     font-size: 35px;
     padding: 20px;
     margin: auto;
-    float: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
 }
 
 header nav>.menu span a {
@@ -48,9 +54,10 @@ header nav>.menu span a:hover {
 }
 
 header nav>.menu .titulo {
-    float: right;
     margin: 15px auto;
-    
+    display: flex;
+    flex-direction: row-reverse;
+    width: 10%;
 }
 
 header nav>.menu .user {
@@ -61,9 +68,9 @@ header nav>.menu .user {
     border-radius: 100px;
     padding: 10px;
     overflow: hidden;
-    float: right;
     border: 5px solid rgb(20, 20, 20);
     display: flex;
+    flex-direction: row;
 }
 
 header nav>.menu .user img {
@@ -185,14 +192,15 @@ table .modi:hover{
 .recuperar h1{
     margin-bottom: 20px;
     color: white;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-family: 'Staatliches', cursive;
     font-size: 25px;
+    letter-spacing: 2px;
 }
 .recuperar .form{
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-family: 'Staatliches', cursive;
 }
 .recuperar .form input[type="email"]{
     padding: 10px 20px;
@@ -207,6 +215,18 @@ table .modi:hover{
 }
 .recuperar .form input[placeholder]{
     padding-left: 45px;
+    font-family: 'Staatliches', cursive;
+}
+.recuperar .form a{
+    text-align: center;
+    color: #ffffff;
+    display: block;
+    margin: 20px auto;
+    transition-property: color;
+    transition: 0.4s;
+}
+.recuperar .form a:hover{
+    color: darkgreen;
 }
 .recuperar .form span{
     font-size: 25px;
@@ -228,6 +248,9 @@ table .modi:hover{
 .recuperar .form input[type="submit"]:hover{
     background-color: darkgreen;
     color: white;
+}
+.recuperar .form input[value]{
+    font-family: 'Staatliches', cursive;
 }
 
 @media screen and (max-width:1000px) {

@@ -10,7 +10,7 @@ body {
     background: url("../img/fondo.jpg");
     background-size: cover;
     background-attachment: fixed;
-    font-family: 'Yanone Kaffeesatz', sans-serif;
+    
 }
 
 header {
@@ -18,6 +18,7 @@ header {
     margin: auto;
     position: relative;
     top: 0;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 header nav {
@@ -69,7 +70,7 @@ header nav>ul li a:hover {
     background: rgba(20, 20, 20, 0.774);
     padding: 20px;
     border-radius: 20px;
-    font-family: 'Staatliches', cursive;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
 .form h3 {
@@ -96,6 +97,7 @@ input[type="password"] {
 
 .form input[placeholder] {
     padding-left: 50px;
+    font-family: 'Staatliches', cursive;
 }
 
 .form input[type="submit"] {

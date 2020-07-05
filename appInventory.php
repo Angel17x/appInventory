@@ -49,15 +49,14 @@
             </div>
             <div class="menu">
                 <span><a data-pushbar-target="mypushbar1"><i class="fas fa-stream"></i></a></span>
-                <div class="user">
-                    <img src="img/user.jpg" alt="">
-                </div>
-
                 <div class="titulo">
                 <!--<h3>USUARIO</h3>-->
                 <h3><?php echo $fila2->NAME. " " . $fila2->LASTNAME. "</br>";   
                         echo $fila2->TYPE_OF_USER;
                     endforeach; $exec->closeCursor();  ?></h3>
+                </div>
+                <div class="user">
+                    <img src="img/user.jpg" alt="">
                 </div>
             </div>
         </nav>
@@ -80,11 +79,11 @@
         
     
             $exec2=$conn->query("SELECT * FROM DATA_PROD ORDER BY ID ASC")->fetchAll(PDO::FETCH_OBJ);
-
+            $nro=1;
                     foreach($exec2 as $fila):
             ?>
             <tr>
-                <td><?php echo $fila->ID ?></td>
+                <td><?php echo $nro ?></td>
                 <td><?php echo $fila->REF ?></td>
                 <td><?php echo $fila->NAME_PROD ?></td>
                 <td><?php echo $fila->ADM_DATE ?></td>
@@ -96,6 +95,7 @@
                 <?php } ?>
             </tr>
             <?php
+            $nro++;
         endforeach;
         $conn=null;
     }catch(Exception $e){

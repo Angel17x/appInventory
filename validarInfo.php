@@ -20,7 +20,7 @@ require("connect.php");
             }else{
 
                 $exec->closeCursor();
-                header('location: login.php');
+                header('location: index.php');
                 
             }
 
