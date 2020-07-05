@@ -35,7 +35,7 @@
                     <?php if($fila2->TYPE_OF_USER=="ADMINISTRADOR"){?>
 
                     <li></span><a href="register.php"><span><i class="fas fa-folder-plus"></i> Registrar</a></li>
-                     <li></span><a href="#"><span><i class="fas fa-arrow-alt-circle-right"></i> Carga</a></li>
+                     <li></span><a href="cargar.php"><span><i class="fas fa-arrow-alt-circle-right"></i> Carga</a></li>
                      <li></span><a href="#"><span><i class="fas fa-arrow-alt-circle-left"></i> Descarga</a></li>
                      <li></span><a href="#"><span><i class="fas fa-people-carry"></i> Traslado</a></li>
                      <li></span><a href="#"><span><i class="fas fa-warehouse"></i> Consultar</a></li>
