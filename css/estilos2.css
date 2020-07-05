@@ -171,6 +171,65 @@ table .modi:hover{
     
 }
 
+
+.recuperar{
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    align-items: center;
+    background-color: rgba(29, 29, 29, 0.753);
+    border-radius: 20px;
+    padding: 20px;
+    width: 40%;
+}
+.recuperar h1{
+    margin-bottom: 20px;
+    color: white;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 25px;
+}
+.recuperar .form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+.recuperar .form input[type="email"]{
+    padding: 10px 20px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    margin: 10px auto 20px auto;
+    color: white;
+    font-size: 16px;
+}
+.recuperar .form input[placeholder]{
+    padding-left: 45px;
+}
+.recuperar .form span{
+    font-size: 25px;
+    left: -40%;
+    top: -55px;
+    position: relative;
+    color: white;
+}
+.recuperar .form input[type="submit"]{
+    border: 4px solid darkgreen;
+    background-color: rgba(29, 29, 29, 0.753);
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    transition-property: background, color;
+}
+.recuperar .form input[type="submit"]:hover{
+    background-color: darkgreen;
+    color: white;
+}
+
 @media screen and (max-width:1000px) {
     table {
         width: 80%;
