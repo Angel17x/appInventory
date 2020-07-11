@@ -15,15 +15,20 @@ require("connect.php");
 
             if($nroreg!=0){
                 session_start();
+
                 $_SESSION['sesion']=$_POST['loginname'];
-                header('location: appInventory.php');
+                if($user=="admin"){
+                    header('location: adminUsers.php');
+                    }else if($_SESSION['sesion']=$_POST['loginname']){
+                    header('location: appInventory.php');
+                        }else{
+                        $exec->closeCursor();
+                        header('location: index.php'); 
+                        }
             }else{
-
-                $exec->closeCursor();
-                header('location: index.php');
-                
+            $exec->closeCursor();
+            header('location: index.php'); 
             }
-
         }catch(Exception $e){
             echo "error mensaje". $e->getMessage();
             echo "error linea". $e->getLine();

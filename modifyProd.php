@@ -56,7 +56,7 @@
         <input type="text" value="<?php echo $obj->QUANTITY?>" placeholder="Cantidad..." name="quantity"><span><i class="fas fa-user-friends"></i></span>
         <h3>Precio</h3>
         <input type="text" value="<?php echo $obj->PRICE?>" placeholder="aqui tu precio" name="price"><span><i class="fas fa-lock"></i></span>
-        <input type="submit" value="Modificar" name="modificar">
+        <input class="btn btn-primary" type="submit" value="Modificar" name="modificar">
         <a href="appInventory.php">Regresar</a>
     </form>
     

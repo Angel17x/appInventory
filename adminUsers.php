@@ -3,6 +3,10 @@
     session_start();
 
     if(!isset($_SESSION['sesion'])){
+        session_destroy();
+        header('location: index.php');
+    }else if($_SESSION['sesion']!="admin"){
+        session_destroy();
         header('location: index.php');
     }else{
         try{
@@ -11,8 +15,6 @@
         $exec->execute(array("names"=>"$_SESSION[sesion]"));
         $result=$exec->fetchAll(PDO::FETCH_OBJ);
         foreach($result as $fila2):
-            
-        
 ?>
 
 <!DOCTYPE html>
@@ -32,28 +34,18 @@
         <nav>
         <div class="pushbar contenedor" data-pushbar-id="mypushbar1" data-pushbar-direction="left">
                 <ul>
-                    <li><a href="appInventory.php"><span><i class="fas fa-home"></i></span> Main</a></li>
-                    <?php if($fila2->TYPE_OF_USER=="ADMINISTRADOR"){?>
-
+                    <li><a href="adminUsers.php"><span><i class="fas fa-home"></i></span> Main</a></li>
+                    <?php if($fila2->TYPE_OF_USER=="ADMINISTRADOR_USUARIOS"){?>
                     <li></span><a href="register.php"><span><i class="fas fa-folder-plus"></i> Registrar</a></li>
-                     <li></span><a href="cargar.php"><span><i class="fas fa-arrow-alt-circle-right"></i> Carga</a></li>
-                     <li></span><a href="#"><span><i class="fas fa-arrow-alt-circle-left"></i> Descarga</a></li>
-                     <li></span><a href="#"><span><i class="fas fa-people-carry"></i> Traslado</a></li>
-                     <li></span><a href="#"><span><i class="fas fa-warehouse"></i> Consultar</a></li>
-                     <?php } ?>
-                    <?php if($fila2->TYPE_OF_USER=="USUARIO"){?>
-                    <li></span><a href="#"><span><i class="fas fa-warehouse"></i> Consultar</a></li> 
                     <?php } ?>
                     <li class="footer"><a href="logout.php"><span><i class="fas fa-sign-out-alt"></i></span> Cerrar Sesion</a></li>
-                    <h5 class="title-mg">Usuario <?php echo $_SESSION['sesion']?></h5>
                 </ul>
             </div>
             <div class="menu">
                 <span><a data-pushbar-target="mypushbar1"><i class="fas fa-stream"></i></a></span>
                 <div class="titulo">
                 <!--<h3>USUARIO</h3>-->
-                <h5 class="title-mg"><?php echo $fila2->NAME. " " . $fila2->LASTNAME. "</br>";   
-                        echo $fila2->TYPE_OF_USER;
+                <?php echo "<h5>ADMINISTRADOR DE USUARIOS</h5>";
                     endforeach; $exec->closeCursor();  ?></h5>
                 </div>
                 <div class="user">
@@ -67,11 +59,11 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>REFERENCIA</th>
-                <th>PRODUCTO</th>
-                <th>FECHA</th>
-                <th>CANTIDAD</th>
-                <th>PRECIO</th>
+                <th>NOMBRE</th>
+                <th>APELLIDO</th>
+                <th>NOMBRE DE USUARIO</th>
+                <th>CONTRASEÑA</th>
+                <th>TIPO DE USUARIO</th>
             </tr>
         </thead>
         <tbody>
@@ -79,20 +71,20 @@
             
         
     
-            $exec2=$conn->query("SELECT * FROM DATA_PROD ORDER BY ID ASC")->fetchAll(PDO::FETCH_OBJ);
+            $exec2=$conn->query("SELECT * FROM DATA_USER ORDER BY ID ASC")->fetchAll(PDO::FETCH_OBJ);
             $nro=1;
                     foreach($exec2 as $fila):
             ?>
+            <?php if($fila2->TYPE_OF_USER=="ADMINISTRADOR_USUARIOS"){?>
             <tr>
-                <td><?php echo $nro ?></td>
-                <td><?php echo $fila->REF ?></td>
-                <td><?php echo $fila->NAME_PROD ?></td>
-                <td><?php echo $fila->ADM_DATE ?></td>
-                <td><?php echo $fila->QUANTITY ?></td>
-                <td><?php echo $fila->PRICE ?></td>
-                <?php if($fila2->TYPE_OF_USER=="ADMINISTRADOR"){?>
-                <td class=""><a class="btn btn-warning modi" id="modificar" href="modifyProd.php?id=<?php echo $fila->ID?>">Modificar</a></td>
-                <td class=""><a class="btn btn-danger eli" id="delete" href="deleteProd.php?id=<?php echo $fila->ID ?>">Eliminar</a></td>
+                <td> <?php echo $nro ?></td>
+                <td><input type="text" value="<?php echo $fila->NAME ?>"></td>
+                <td><input type="text" value="<?php echo $fila->LASTNAME ?>"></td>
+                <td><input type="text" value="<?php echo $fila->LOGINNAME ?>"></td>
+                <td><input type="text" value="<?php echo $fila->PASS ?>"></td>
+                <td><input type="text" value="<?php echo $fila->TYPE_OF_USER ?>"></td>
+                <td><button class="btn btn-info modi" id="modificar" href="#">Modificar</button></td>
+                <td><button class="btn btn-danger eli" id="delete" href="#">Eliminar</button></td>
                 <?php } ?>
             </tr>
             <?php

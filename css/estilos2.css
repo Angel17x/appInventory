@@ -134,7 +134,7 @@ header nav>.contenedor ul>li>a:hover {
 table {
     justify-content: center;
     justify-items: center;
-    margin: 20px auto;
+    margin: 0px auto;
     width: 90%;
     background: rgba(161, 161, 161, 0.445);
     padding: 20px;
@@ -164,6 +164,14 @@ table tbody tr td {
     padding: 10px;
     background: rgba(175, 175, 175, 0.445);
     font-size: 18px;
+}
+table tbody tr td input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid white;
+    background: transparent;
+    color: white;
 }
 
 
