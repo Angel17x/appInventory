@@ -35,7 +35,7 @@ header nav>.menu {
 }
 
 header nav>.menu span {
-    font-size: 35px;
+    font-size: 30px;
     padding: 20px;
     margin: auto;
     display: flex;
@@ -131,12 +131,14 @@ header nav>.contenedor ul>li>a:hover {
 
 }
 
+
 table {
+    float: right;
     justify-content: center;
     justify-items: center;
     margin: 0px auto;
-    width: 100%;
-    background: rgba(161, 161, 161, 0.445);
+    width: 90%;
+    background: rgba(255, 255, 255, 0.918);
     padding: 20px;
     font-family: 'Staatliches', cursive;
 }
@@ -153,11 +155,11 @@ table thead tr th {
 }
 
 table tbody {
-    color: white;
 }
 
 table tbody tr {
     margin: 10px auto;
+    border-bottom: 1px solid black;
 }
 
 table tbody tr td {
@@ -165,14 +167,18 @@ table tbody tr td {
     padding: 10px;
     background: rgba(175, 175, 175, 0.445);
     font-size: 18px;
+    color: black;
 }
+
+
+
 table tbody tr td input{
     border-top: none;
     border-left: none;
     border-right: none;
     border-bottom: 1px solid white;
     background: transparent;
-    color: white;
+    color: black;
 }
 
 

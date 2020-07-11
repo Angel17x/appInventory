@@ -16,7 +16,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,9 +52,9 @@
                 <span><a data-pushbar-target="mypushbar1"><i class="fas fa-stream"></i></a></span>
                 <div class="titulo">
                 <!--<h3>USUARIO</h3>-->
-                <h5 class="title-mg"><?php echo $fila2->NAME. " " . $fila2->LASTNAME. "</br>";   
+                <h6 class="title-mg"><?php echo $fila2->NAME. " " . $fila2->LASTNAME. "</br>";   
                         echo $fila2->TYPE_OF_USER;
-                    endforeach; $exec->closeCursor();  ?></h5>
+                    endforeach; $exec->closeCursor();  ?></h6>
                 </div>
                 <div class="user">
                     <img src="img/user.jpg" alt="">
@@ -62,7 +62,6 @@
             </div>
         </nav>
     </header>
-
     <table>
         <thead>
             <tr>
@@ -84,15 +83,15 @@
                     foreach($exec2 as $fila):
             ?>
             <tr>
-                <td><?php echo $nro ?></td>
+                <td class=""><?php echo $nro ?></td>
                 <td><?php echo $fila->REF ?></td>
                 <td><?php echo $fila->NAME_PROD ?></td>
                 <td><?php echo $fila->ADM_DATE ?></td>
                 <td><?php echo $fila->QUANTITY ?></td>
                 <td><?php echo $fila->PRICE ?></td>
                 <?php if($fila2->TYPE_OF_USER=="ADMINISTRADOR"){?>
-                <td class=""><a class="btn btn-warning modi" id="modificar" href="modifyProd.php?id=<?php echo $fila->ID?>">Modificar</a></td>
-                <td class=""><a class="btn btn-danger eli" id="delete" href="deleteProd.php?id=<?php echo $fila->ID ?>">Eliminar</a></td>
+                <td class=""><button class="btn btn-warning modi" id="modificar" href="modifyProd.php?id=<?php echo $fila->ID?>">Modificar</button></td>
+                <td class=""><button class="btn btn-danger eli" id="delete" href="deleteProd.php?id=<?php echo $fila->ID ?>">Eliminar</button></td>
                 <?php } ?>
             </tr>
             <?php
@@ -120,20 +119,6 @@
             blur: true
         });
     </script>
-    <script>
-
-document.querySelector("#delete").addEventlistener("click", confirmDelete);
-function confirmDelete(){
-    let x=confirm("deseas eliminar a este usuario?");
-    if(x){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-   
-
-</script>
+   <script src="js/api.js"></script>
 </body>
 </html>
