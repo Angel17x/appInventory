@@ -10,6 +10,7 @@ body {
     background: url("../img/fondo.jpg");
     background-size: cover;
     background-attachment: fixed;
+    font-size: 15px;
 }
 
 header {
@@ -58,6 +59,7 @@ header nav>.menu .titulo {
     display: flex;
     flex-direction: row-reverse;
     width: 10%;
+    font-size: 16px;
 }
 
 header nav>.menu .user {
@@ -85,7 +87,7 @@ header nav>.contenedor {
     background: rgb(20, 20, 20);
 }
 
-header nav>.contenedor h3 {
+header nav>.contenedor h5 {
     border-bottom: 1px solid white;
     color: white;
     margin: 2px auto;
@@ -132,10 +134,9 @@ header nav>.contenedor ul>li>a:hover {
 table {
     justify-content: center;
     justify-items: center;
-    margin: 5% auto;
-    width: 60%;
+    margin: 20px auto;
+    width: 90%;
     background: rgba(161, 161, 161, 0.445);
-    border-radius: 20px;
     padding: 20px;
     font-family: 'Staatliches', cursive;
 }
@@ -162,21 +163,9 @@ table tbody tr td {
     text-align: center;
     padding: 10px;
     background: rgba(175, 175, 175, 0.445);
+    font-size: 18px;
 }
-table .modi, .eli{
-    color: black;
-    text-decoration: none;   
-}
-table .eli:hover{
-    color: darkslateblue;
-    transition: 600ms;
-    
-}
-table .modi:hover{
-    color: darkslateblue;
-    transition: 600ms;
-    
-}
+
 
 
 .recuperar{
@@ -256,8 +245,8 @@ table .modi:hover{
 @media screen and (max-width:1000px) {
     table {
         width: 80%;
-        border-radius: 15px;
         padding: 15px;
+        font-size: 15px;
     }
 }
 
@@ -273,7 +262,6 @@ table .modi:hover{
 @media screen and (max-width:600px) {
     table {
         width: 100%;
-        border-radius: 10px;
         padding: 10px;
         font-size: 12px;
     }

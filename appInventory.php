@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="css/font.google.css">
     <link rel="stylesheet" href="css/pushbar.css">
     <script src="js/all.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
     <header>
@@ -44,16 +45,16 @@
                     <li></span><a href="#"><span><i class="fas fa-warehouse"></i> Consultar</a></li> 
                     <?php } ?>
                     <li class="footer"><a href="logout.php"><span><i class="fas fa-sign-out-alt"></i></span> Cerrar Sesion</a></li>
-                    <h3>USUARIO <?php echo $_SESSION['sesion']?></h3>
+                    <h5 class="title-mg">USUARIO <?php echo $_SESSION['sesion']?></h5>
                 </ul>
             </div>
             <div class="menu">
                 <span><a data-pushbar-target="mypushbar1"><i class="fas fa-stream"></i></a></span>
                 <div class="titulo">
                 <!--<h3>USUARIO</h3>-->
-                <h3><?php echo $fila2->NAME. " " . $fila2->LASTNAME. "</br>";   
+                <h5 class="title-mg"><?php echo $fila2->NAME. " " . $fila2->LASTNAME. "</br>";   
                         echo $fila2->TYPE_OF_USER;
-                    endforeach; $exec->closeCursor();  ?></h3>
+                    endforeach; $exec->closeCursor();  ?></h5>
                 </div>
                 <div class="user">
                     <img src="img/user.jpg" alt="">
@@ -90,8 +91,8 @@
                 <td><?php echo $fila->QUANTITY ?></td>
                 <td><?php echo $fila->PRICE ?></td>
                 <?php if($fila2->TYPE_OF_USER=="ADMINISTRADOR"){?>
-                <td><a class="modi" id="modificar" href="modifyProd.php?id=<?php echo $fila->ID?>">Modificar</a></td>
-                <td><a class="eli" id="delete" href="deleteProd.php?id=<?php echo $fila->ID ?>">Eliminar</a></td>
+                <td class=""><a class="btn btn-warning modi" id="modificar" href="modifyProd.php?id=<?php echo $fila->ID?>">Modificar</a></td>
+                <td class=""><a class="btn btn-danger eli" id="delete" href="deleteProd.php?id=<?php echo $fila->ID ?>">Eliminar</a></td>
                 <?php } ?>
             </tr>
             <?php
