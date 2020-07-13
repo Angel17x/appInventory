@@ -37,9 +37,9 @@ require("connect.php");
 
     if(isset($_POST['registrar'])){
 
-        $ref=strtoupper($_POST['ref']);
-        $name=strtoupper($_POST['name_prod']);
-        $datetime=strtoupper($_POST['datetime']);
+        $ref=strtolower($_POST['ref']);
+        $name=strtolower($_POST['name_prod']);
+        $datetime=strtolower($_POST['datetime']);
         $quantity=$_POST['quantity'];
         $price=$_POST['price'];
         $encrypt=password_hash($pass, PASSWORD_DEFAULT);
