@@ -31,8 +31,9 @@
             <div class="col-sm-12 col-md-12 col-lg-6">
                 <div class="card">
                     <div class="card-body">
+
                     <!---FORMULARIO DE SESION PHP----->
-                    <form id="form" action="validarInfo.php" class="form" method="post">
+                    <form id="form" class="form" method="post">
                     <div class="form-group mt-2">
                         <label class="card-title" for="loginname">Nombre De Usuario</label>
                         <input type="text" placeholder="&#xf2bd;" style="font-family: FontAwesome;" class="form-control tamaño" name="loginname" id="loginname" >

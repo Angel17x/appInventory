@@ -41,12 +41,12 @@
         
                     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container-fluid justify-content-sm-between">
-                <span class="navbar-header mt-2 col-md-4 col-12" style="font-size: 35px; color: white;"><a data-pushbar-target="mypushbar1"><i class="fas fa-stream"></i></a></span>
-                <div class="navbar-brand col-md-3 col-12 bg-light">
-                <h5 class="mt-3"></h5>
+                <span class="navbar-header mt-2 col-md-4 col-12 col-sm-4" style="font-size: 35px; color: white;"><a data-pushbar-target="mypushbar1"><i class="fas fa-stream"></i></a></span>
+                <div class="navbar-brand col-md-4 col-12 col-sm-4 bg-light">
+                <h5 class="mt-3" id="titulo"></h5><!--------TITULO DE USUARIO------------->
                 </div>
                 </div>
-                <ul class="navbar-nav ml-auto col-md-3 col-sm-12">
+                <ul class="navbar-nav ml-auto col-12 col-md-4 col-sm-4">
                     <form class="form-inline my-2 my-lg-0">
                         <input type="search" id="search" class="form-control mr-sm-2"
                         placeholder="Buscar Producto">
@@ -71,12 +71,45 @@
                         <th>PRECIO</th>
                     </tr>
                 </thead>
-            <tbody class="bg-light">
+            <tbody id="task" class="bg-light">
                  
             </tbody>
             </table>
             </div>
-            </div>   
+            </div>
+            <div class="container-fluid bg-light">
+                <div class="row justify-content-sm-center">
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <form class="form p-4" id="form">
+                                <div class="form-group col-md-12">
+                                    <label class="bg-light" for="ref">Referencia Del Producto</label>
+                                    <input class="form-control" type="text" name="ref" id="ref">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label class="bg-light" for="name_prod">Nombre del Producto</label>
+                                    <input class="form-control" type="text" name="name_prod" id="name_prod">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label class="bg-light" for="adm_date">Fecha de ingreso</label>
+                                    <input class="form-control" type="text" name="adm_date" id="adm_date">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label class="bg-light" for="quantity">Cantidad</label>
+                                    <input class="form-control" type="text" name="quantity" id="quantity">
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label class="bg-light" for="price">Precio</label>
+                                    <input class="form-control" type="text" name="price" id="price">
+                                </div>
+                                <input type="submit" class="btn btn-primary btn-block text-center" value="Modificar" name="modificar" id="modificar">
+                            </form>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
     
     <script src="js/jquery-3.5.1.js"></script>
     <script src="js/app.js"></script>
