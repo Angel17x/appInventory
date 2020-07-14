@@ -20,42 +20,47 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-    <div class="pushbar contenedor"  data-pushbar-id="mypushbar1" data-pushbar-direction="left">
-                <ul>
-                    <li><a href="appInventory.php"><span><i class="fas fa-home"></i></span> Main</a></li>
-                    
-
-                    <li></span><a href="register.php"><span><i class="fas fa-folder-plus"></i> Registrar</a></li>
-                     <li></span><a href="cargar.php"><span><i class="fas fa-arrow-alt-circle-right"></i> Carga</a></li>
-                     <li></span><a href="#"><span><i class="fas fa-arrow-alt-circle-left"></i> Descarga</a></li>
-                     <li></span><a href="#"><span><i class="fas fa-people-carry"></i> Traslado</a></li>
-                     <li></span><a href="#"><span><i class="fas fa-warehouse"></i> Consultar</a></li>
-                     
-                    
-                    <li></span><a href="#"><span><i class="fas fa-warehouse"></i> Consultar</a></li> 
-                   
-                    <li class="footer"><a href="logout.php"><span><i class="fas fa-sign-out-alt"></i></span> Cerrar Sesion</a></li>
-                    <h5>Usuario <?php echo $_SESSION['sesion']?></h5>
+    <div class="pushbar bg-dark "  data-pushbar-id="mypushbar1" data-pushbar-direction="left">
+                <ul class="list-group bg-dark">
+                    <li><a class="btn btn-block btn-secondary href="appInventory.php"><span><i class="fas fa-home"></i></span> Main</a></li>
+                     <li></span><a class="btn btn-block btn-secondary "href="#"><span><i class="fas fa-arrow-alt-circle-right"></i> Carga</a></li>
+                     <li></span><a class="btn btn-block btn-secondary "href="#"><span><i class="fas fa-arrow-alt-circle-left"></i> Descarga</a></li>
+                     <li></span><a class="btn btn-block btn-secondary "href="#"><span><i class="fas fa-people-carry"></i> Traslado</a></li>
+                     <li></span><a class="btn btn-block btn-secondary "href="#"><span><i class="fas fa-warehouse"></i> Proveedores</a></li> 
+                     <li></span><a class="btn btn-block btn-secondary "href="#"><span><i class="fas fa-warehouse"></i> Clientes</a></li> 
+                    <li><a class="btn btn-block btn-secondary" href="logout.php"><span><i class="fas fa-sign-out-alt"></i></span> Cerrar Sesion</a></li>
+                    <h5 class="btn btn-block btn-secondary active">Usuario <?php echo $_SESSION['sesion']?></h5>
                 </ul>
             </div>
         
                     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container-fluid justify-content-sm-between">
                 <span class="navbar-header mt-2 col-md-4 col-12 col-sm-4" style="font-size: 35px; color: white;"><a data-pushbar-target="mypushbar1"><i class="fas fa-stream"></i></a></span>
-                <div class="navbar-brand col-md-4 col-12 col-sm-4 bg-light">
+                <div class="navbar-brand col-lg-4 col-md-4 col-12 col-sm-4 bg-light flex-lg-row-reverse">
                 <h5 class="mt-3" id="titulo"></h5><!--------TITULO DE USUARIO------------->
                 </div>
                 </div>
-                <ul class="navbar-nav ml-auto col-12 col-md-4 col-sm-4">
+                <ul class="navbar-nav ml-auto col-12 col-md-12 col-sm-12 col-lg-2 flex-lg-row-reverse">
                     <form class="form-inline my-2 my-lg-0">
                         <input type="search" id="search" class="form-control mr-sm-2"
                         placeholder="Buscar Producto">
-                        <button class="btn btn-success my-2 my-sm-0" type="submit">
-                            Buscar
                         </button>
                     </form>
                 </ul>
                     </nav>
+
+
+            <div id="contenedor-md" class="container-fluid mt-5" style='display:none'>
+                <div class="row justify-content-sm-center">
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                    <div class="card">
+                        <div id="respuesta" class="card-body">
+                            
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
 
         <!---------------------------TABLA DE DATOS--------------------------------------->
          <div class="container">
@@ -77,39 +82,7 @@
             </table>
             </div>
             </div>
-            <div class="container-fluid bg-light">
-                <div class="row justify-content-sm-center">
-                    <div class="col-sm-12 col-md-12 col-lg-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <form class="form p-4" id="form">
-                                <div class="form-group col-md-12">
-                                    <label class="bg-light" for="ref">Referencia Del Producto</label>
-                                    <input class="form-control" type="text" name="ref" id="ref">
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <label class="bg-light" for="name_prod">Nombre del Producto</label>
-                                    <input class="form-control" type="text" name="name_prod" id="name_prod">
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <label class="bg-light" for="adm_date">Fecha de ingreso</label>
-                                    <input class="form-control" type="text" name="adm_date" id="adm_date">
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <label class="bg-light" for="quantity">Cantidad</label>
-                                    <input class="form-control" type="text" name="quantity" id="quantity">
-                                </div>
-                                <div class="form-group col-md-12">
-                                    <label class="bg-light" for="price">Precio</label>
-                                    <input class="form-control" type="text" name="price" id="price">
-                                </div>
-                                <input type="submit" class="btn btn-primary btn-block text-center" value="Modificar" name="modificar" id="modificar">
-                            </form>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>
+            
     
     <script src="js/jquery-3.5.1.js"></script>
     <script src="js/app.js"></script>
