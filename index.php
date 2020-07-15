@@ -6,15 +6,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>APPINVENTORY - FERRETERIA EL GRAN MARTILLO</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/estilos2.css">
     <link rel="stylesheet" href="css/pushbar.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
     <script src="js/all.min.js"></script>
     
 </head>
-<body>
+<body class="hidden">
+    <div id="preloader" class="preloader">
+            <button class="btn btn-successs bg-success" style="border-radius:20px; width: 20rem; height: 5rem;" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" style="width: 2rem; height: 2rem;" role="status" aria-hidden="true"></span>
+                <h5>APPINVENTORYFGM</h5>
+            </button>
+        </div>
     <header>
         <nav class="nav navbar-expand-lg bg-dark navbar-dark p-4 justify-content-center">
         <a class="navbar-brand bg-success p-2" href="index.php">APPINVENTORY</a>
@@ -46,6 +52,8 @@
 
                         <input type="submit" class="btn btn-primary btn-block text-center" value="Entrar" name="entrar" id="entrar">
                     <div class="form-group text-center mt-2 p-2">
+                    <div id="respuesta1" class="alert alert-success" style="display: none;"></div>
+                    <div id="respuesta2" class="alert alert-danger" style="display: none;"></div>   
                     <a class="alert alert-link" href="forgot.php">Olvidastes tu contraseña? Entra aqui para recuperar la contraseña</a>
                     </div>
                     </form>

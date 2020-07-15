@@ -19,7 +19,14 @@
     <script src="js/all.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
-<body>
+<body class="hidden">
+        <div id="preloader" class="preloader">
+            <button class="btn btn-successs bg-success" style="border-radius:20px; width: 20rem; height: 5rem;" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" style="width: 2rem; height: 2rem;" role="status" aria-hidden="true"></span>
+                <h5 class="text-primary">APPINVENTORYFGM</h5>
+            </button>
+        </div>
+    
     <div class="pushbar bg-dark "  data-pushbar-id="mypushbar1" data-pushbar-direction="left">
                 <ul class="list-group bg-dark">
                     <li><a class="btn btn-block btn-secondary href="appInventory.php"><span><i class="fas fa-home"></i></span> Main</a></li>
@@ -44,7 +51,6 @@
                     <form class="form-inline my-2 my-lg-0">
                         <input type="search" id="search" class="form-control mr-sm-2"
                         placeholder="Buscar Producto">
-                        </button>
                     </form>
                 </ul>
                     </nav>
@@ -64,8 +70,9 @@
 
         <!---------------------------TABLA DE DATOS--------------------------------------->
          <div class="container">
+         <div id="notRes" class="alert alert-danger p-3 mt-3" style="display: none;"></div>
              <div class="table-responsive">
-            <table class="table table-borderess table-hover table-sm mt-5">
+            <table class="table table-borderess table-hover table-sm mt-2">
                 <thead class="thead-dark">
                     <tr>
                         <th>ID</th>
@@ -83,7 +90,6 @@
             </div>
             </div>
             
-    
     <script src="js/jquery-3.5.1.js"></script>
     <script src="js/app.js"></script>
     <script src="js/pushbar.js"></script>

@@ -38,6 +38,7 @@
             echo $e->getMessage();
         }
     }else if(!empty($_POST['search'])){
+
         $search = $_POST['search'];
         try{
             $sql = "SELECT * FROM DATA_PROD WHERE NAME_PROD LIKE '$search%'";
@@ -45,9 +46,9 @@
             $exec->execute();
 
             if(!$exec){
-                die("no se encuentra tu busqueda");
-                exit();
-            }
+                echo "no se encuentra tu busqueda";
+                
+            }else{
             $result = $exec->fetchAll(PDO::FETCH_OBJ);
             
             $JSON = array();
@@ -65,7 +66,7 @@
 
            $jsonresult = json_encode($JSON);
            echo $jsonresult;
-        
+            }
         }catch(Exception $e){
             echo "error de consulta: ".$e->getLine();
         }

@@ -3,9 +3,18 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
-/******************appInventory - Vista Modificar*****************************************/
-
-
+/*****************************************************************************************/
+.preloader{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    
+}
+.hidden{
+    overflow: hidden;
+}
 
 
 

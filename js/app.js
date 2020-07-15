@@ -1,3 +1,8 @@
+window.onload = function(){
+    $("#preloader").fadeOut();
+    $("body").removeClass('hidden');
+}
+
 $(document).ready(function(){
 
     obtenerTabla();
@@ -165,13 +170,25 @@ $("#form").on("submit",function(e){
         }
 
     $.post("validarInfo.php", obj, function (response) {
-        alert(response);
+
+        let res1 = $("#respuesta1").html(response);
+        let res2 = $("#respuesta2").html(response);
+
         if(response=="haz conectado satisfactoriamente"){
-        window.location.href = 'http://localhost/formulario/appInventory.php';
+        
+            res1.slideToggle();
+            res2.fadeOut();
+            alert(response);
+            window.location.href = 'http://localhost/formulario/appInventory.php';    
+            
         }else{
+            
+            res2.slideToggle();
+            res1.fadeOut();
             e.preventDefault();
         }
     });
+        
         e.preventDefault();
 })
 
@@ -184,6 +201,7 @@ $("#search").keyup(function () {
     
 
     var search = $("#search").val();
+
     if(search.length==0){
         obtenerTabla();
     }else{
@@ -197,6 +215,7 @@ $("#search").keyup(function () {
                 var data = JSON.parse(response);
                 let template = '';
 
+                if(data!=""){
                 data.forEach(data =>{
                     template += `<tr taskid='${data.id}'>
                     <td>${data.id}</td>
@@ -208,11 +227,19 @@ $("#search").keyup(function () {
                 });
 
               $("#task").html(template);
+
+                }else{
+                    let notRes = $("#notRes").html("no se encuentra tu busqueda");
+                    $("#notRes").fadeTo(2000, 1000).slideUp(500, function(){
+                        $("#notRes").slideUp(500);
+                 });
+                }
             }
             
             
         });
     }
+        
     
 }
 });
