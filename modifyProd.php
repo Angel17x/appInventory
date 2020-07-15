@@ -4,7 +4,7 @@
     try{
         $id = $_POST['id'];
         $ref = $_POST['ref'];
-        $name_prod = $_POST['name_prod'];
+        $name_prod = strtolower($_POST['name_prod']);
         $adm_date = $_POST['adm_date'];
         $quantity = $_POST['quantity'];
         $price = $_POST['price'];

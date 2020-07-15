@@ -167,7 +167,7 @@ $("#form").on("submit",function(e){
     $.post("validarInfo.php", obj, function (response) {
         alert(response);
         if(response=="haz conectado satisfactoriamente"){
-        window.location.href = 'http://192.168.1.101/formulario/appInventory.php';
+        window.location.href = 'http://localhost/formulario/appInventory.php';
         }else{
             e.preventDefault();
         }
