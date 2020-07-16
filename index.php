@@ -64,11 +64,21 @@
         </div>
     </div>
     <!---CIERRE DE BOOTSTRAP CONTENEDOR----->
+        <footer>
+            <div class="contenido">
+                <div class="contenido">
+                    <span><a class="color" href="index.php"><i class="fab fa-facebook-square"></i></a></span>
+                    <span><a class="text-info" href="index.php"><i class="fab fa-twitter-square"></i></a></span>
+                    <span><a class="text-danger" href="index.php"><i class="fab fa-pinterest-square"></i></a></span>
+                    <span><a class="text-light" href="index.php"><i class="fab fa-instagram-square"></i></a></span>
+                </div>
+            </div>
+            <div class="copy">
+                    <h6><i class="fa fa-copyright" aria-hidden="true"></i> Copyright Reserved - AppInventoryFGM</h6>
+                </div>
+            
+        </footer>
 
-
-    <footer>
-
-    </footer>
     <script src="js/jquery-3.5.1.js"></script>
     <script src="js/app.js"></script>
     <script src="js/pushbar.js"></script>
