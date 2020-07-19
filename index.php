@@ -14,7 +14,7 @@
     <script src="js/all.min.js"></script>
     
 </head>
-<body class="hidden">
+<body id="index" class="hidden">
     <div id="preloader" class="preloader">
             <button class="btn btn-successs bg-success" style="border-radius:20px; width: 20rem; height: 5rem;" type="button" disabled>
                 <span class="spinner-border spinner-border-sm" style="width: 2rem; height: 2rem;" role="status" aria-hidden="true"></span>
@@ -78,7 +78,9 @@
                 </div>
             
         </footer>
-
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.4.0.0.min.js"></script>
     <script src="js/jquery-3.5.1.js"></script>
     <script src="js/app.js"></script>
     <script src="js/pushbar.js"></script>

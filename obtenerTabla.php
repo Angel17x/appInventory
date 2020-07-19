@@ -20,13 +20,16 @@
             $JSON= array();
             foreach($result as $obj):
                 
-                $JSON[]=array(
+                $JSON[] = array(
                     'id' => $obj->ID,
                     'ref' => $obj->REF,
                     'name_prod' => $obj->NAME_PROD,
                     'adm_date' => $obj->ADM_DATE,
                     'quantity' => $obj->QUANTITY,
-                    'price'=> $obj->PRICE
+                    'price'=> $obj->PRICE,
+                    'price_2'=> $obj->PRICE_2,
+                    'price_3'=> $obj->PRICE_3,
+                    'warehouse'=> $obj->WAREHOUSE
                 );
             endforeach;
     
@@ -60,7 +63,10 @@
                     'name_prod' => $obj->NAME_PROD,
                     'adm_date' => $obj->ADM_DATE,
                     'quantity' => $obj->QUANTITY,
-                    'price'=> $obj->PRICE
+                    'price'=> $obj->PRICE,
+                    'price_2'=> $obj->PRICE_2,
+                    'price_3'=> $obj->PRICE_3,
+                    'warehouse'=> $obj->WAREHOUSE
                 );
             endforeach;
 
@@ -82,13 +88,16 @@
             $JSON= array();
             foreach($result as $obj):
                 
-                $JSON[]=array(
+                $JSON[] = array(
                     'id' => $obj->ID,
                     'ref' => $obj->REF,
                     'name_prod' => $obj->NAME_PROD,
                     'adm_date' => $obj->ADM_DATE,
                     'quantity' => $obj->QUANTITY,
-                    'price'=> $obj->PRICE
+                    'price'=> $obj->PRICE,
+                    'price_2'=> $obj->PRICE_2,
+                    'price_3'=> $obj->PRICE_3,
+                    'warehouse'=> $obj->WAREHOUSE
                 );
             endforeach;
     
@@ -99,5 +108,9 @@
             echo "error al ejecutar la consulta". $e->getLine();
             echo $e->getMessage();
         }
+    }
+
+    if(isset($_GET['prov'])){
+        echo "proveedores";
     }
 ?>

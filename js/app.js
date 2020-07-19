@@ -6,8 +6,34 @@ window.onload = function(){
 $(document).ready(function(){
 
     obtenerTabla();
+    obtenerProv();
     dataUser();
-/***********************OBTENER DATOS DE LA TABLA************************/
+
+/***********************OBTENER DATOS DE EL USUARIO************************/
+function dataUser(){
+    $.ajax({
+        url: "infoUser.php",
+        method: "GET",
+        success: function(response){
+            let dataUser = JSON.parse(response);
+            let template = '';
+
+            dataUser.forEach(dataUser =>{
+                template += `${dataUser.name} ${dataUser.lastname}</br>${dataUser.type_of_user}`
+
+                
+                if(dataUser.type_of_user == "USUARIO"){
+                    
+                    
+                    }
+            });
+            $("#titulo").html(template);
+
+            
+        }
+    });
+}
+/***********************OBTENER TABLA PRODUCTOS************************/
     function obtenerTabla(){
         $.ajax({
             method: "GET",
@@ -20,7 +46,8 @@ $(document).ready(function(){
                     template2 += `<tr taskid='${dataTable.id}'>
                         <td>${dataTable.id}</td>
                         <td>${dataTable.ref}</td><td>${dataTable.name_prod}</td> <td>${dataTable.adm_date}</td>
-                        <td>${dataTable.quantity}</td><td>${dataTable.price}</td>
+                        <td>${dataTable.quantity}</td><td>${dataTable.price}</td><td>${dataTable.price_2}</td><td>${dataTable.price_3}</td>
+                        <td>${dataTable.warehouse}</td>
                         <td id='mod'><button class='btn btn-warning btn-mg' id='modificar' data-toggle="modal" data-target="#exampleModalCenter">Modificar</button></td>
                         <td id='del'><button class='btn btn-danger btn-mg' id='eliminar'>Eliminar</button></td>
                     </tr>`
@@ -30,30 +57,9 @@ $(document).ready(function(){
             }
         })
     }
-/***********************OBTENER DATOS DE EL USUARIO************************/
-    function dataUser(){
-        $.ajax({
-            url: "infoUser.php",
-            method: "GET",
-            success: function(response){
-                let dataUser = JSON.parse(response);
-                let template = '';
 
-                dataUser.forEach(dataUser =>{
-                    template += `${dataUser.name} ${dataUser.lastname}</br>${dataUser.type_of_user}`
 
-                    
-                    if(dataUser.type_of_user == "USUARIO"){
-                        
-                        
-                        }
-                });
-                $("#titulo").html(template);
 
-                
-            }
-        });
-    }
 
 
 /*********************FUNCION ELIMINAR PRODUCTO********************************/
@@ -88,8 +94,6 @@ $(document).ready(function(){
 $(document).on('click', '#modificar', function(e){
     
     e.preventDefault();
-    /********APARECE FORMULARIO*********/
-    let contenedor = $("#contenedor-md").fadeIn();
 
     /********ENVIAR DATOS*********/
 var elemento = $(this)[0].parentElement.parentElement;
@@ -97,7 +101,7 @@ var id = $(elemento).attr('taskid');
 
 $.post('obtenerTabla.php', {id}, function(response){
 
-    let datos = response; 
+    let datos = response;
     $.ajax({
         method: "GET",
         url: "obtenerTabla.php",
@@ -131,6 +135,18 @@ $.post('obtenerTabla.php', {id}, function(response){
                 <div class="form-group col-md-12">
                     <label class="bg-light" for="price">Precio</label>
                     <input class="form-control" type="text" name="price" id="price" value="${dataTable.price}">
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="bg-light" for="price">Precio_2</label>
+                    <input class="form-control" type="text" name="price2" id="price2" value="${dataTable.price_2}">
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="bg-light" for="price">Precio_3</label>
+                    <input class="form-control" type="text" name="price3" id="price3" value="${dataTable.price_3}">
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="bg-light" for="price">Almacen</label>
+                    <input class="form-control" type="text" name="warehouse" id="warehouse" value="${dataTable.warehouse}">
                 </div>
                 <button type="submit" class="btn btn-primary btn-block text-center" value="Modificar" name="update" id="update" data-dismiss="modal">Modificar</button>
                 <button class="btn mt-2 btn-warning btn-block text-center" data-dismiss="modal">Regresar</button>
@@ -236,7 +252,7 @@ $("#form").on("submit",function(e){
         e.preventDefault();
 })
 
-    /***********************FORMULARIO BUSQUEDA********************************/
+    /***********************FORMULARIO BUSQUEDA PARA PRODUCTOS********************************/
     $(document).on("click","#buscar", function(e){
         e.preventDefault();
     });
@@ -288,10 +304,179 @@ $("#search").keyup(function () {
 }
 });
 
-$('#myModal').on('shown.bs.modal', function () {
-    $('#myInput').trigger('focus')
-  })
+/************************OBTENER TABLA PROVEEDORES*********************************/
+function obtenerProv(){
+    $.ajax({
+        method: "POST",
+        url: "obtenerProv.php",
+        success: function(response){
+            var dataTable = JSON.parse(response);
+                let template = '';
+    
+                dataTable.forEach(dataTable =>{
+                    template += `<tr taskid2='${dataTable.id}'>
+                        <td>${dataTable.id}</td>
+                        <td>${dataTable.tradename}</td><td>${dataTable.fiscal_name}</td> <td>${dataTable.comercial_business}</td>
+                        <td>${dataTable.domicilie}</td><td>${dataTable.telephone}</td>
+                        <td id='mod'><button class='btn btn-warning btn-mg' id='modificar2' data-toggle="modal" data-target="#exampleModalCenter">Modificar</button></td>
+                        <td id='del'><button class='btn btn-danger btn-mg' id='eliminar2'>Eliminar</button></td>
+                    </tr>`
+                });
+    
+                $("#task4").html(template);
+        }
+    });
+}
+/*********************FUNCION ELIMINAR PROVEEDORES********************************/
+$(document).on('click', '#eliminar2', function(){
+var elemento = $(this)[0].parentElement.parentElement;
+var id = $(elemento).attr('taskid2');
+
+if(confirm("estas seguro que deseas eliminar este proveedor?")){
+    $.get('deleteProv.php', {id}, function(response){
+        obtenerProv()
+        let res = 
+                `<div class='container'>
+                    <div class='row justify-content-center'>
+                        <div class='col-lg-4'>
+                        <h6 class='alert alert-success alert-dismissible fade show'>${response}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </h6>
+                        </div>
+                    </div>
+                </div>`
+
+            $("#modal-response").html(res);
+        }
+        
+    )};
 });
 
 
+
+/*********************FUNCION MODIFICAR PROVEEDORES********************************/
+
+$(document).on('click', '#modificar2', function(e){
+    
+    e.preventDefault();
+    
+var elemento = $(this)[0].parentElement.parentElement;
+var id = $(elemento).attr('taskid2');
+
+$.post("obtenerProv.php", {id}, function(res){
+    const datos = res;
+    
+    $.ajax({
+        method: "GET",
+        url: "obtenerTabla.php",
+        success: function(){
+          const dataForm = JSON.parse(datos);
+            let template = '';
+
+            dataForm.forEach(dataForm =>{
+                template += `<form modifyId="form" class="form p-4" id="form2" method="POST">
+                
+                <div class="form-group col-md-12">
+                    <label class="bg-light" for="id">Id Del Proveedor</label>
+                    <input class="form-control" type="number" name="id" id="id" value="${dataForm.id}">
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="bg-light" for="ref">Nombre Comercial</label>
+                    <input class="form-control" type="text" name="tradename" id="tradename" value="${dataForm.tradename}">
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="bg-light" for="name_prod">Nombre Fiscal</label>
+                    <input class="form-control" type="text" name="fiscalname" id="fiscalname" value="${dataForm.fiscal_name}">
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="bg-light" for="adm_date">Giro Comercial</label>
+                    <input class="form-control" type="text" name="comercial_business" id="comercial_business" value="${dataForm.comercial_business}">
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="bg-light" for="quantity">Domicilio</label>
+                    <input class="form-control" type="text" name="domicilie" id="domicilie" value="${dataForm.domicilie}">
+                </div>
+                <div class="form-group col-md-12">
+                    <label class="bg-light" for="price">Telefono</label>
+                    <input class="form-control" type="text" name="telephone" id="telephone" value="${dataForm.telephone}">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block text-center" value="Modificar" name="update2" id="update2" data-dismiss="modal">Modificar</button>
+                <button class="btn mt-2 btn-warning btn-block text-center" data-dismiss="modal">Regresar</button>
+            </form>`
+            });
+
+            $(document).on('click','#regresar2',function(e){
+                e.preventDefault();
+            });
+            $("#respuesta2").html(template);
+        }
+    });
+    
+    
+
+    
+});
+
+$(document).on('click','#update2',function(e){
+    e.preventDefault();
+       let datos = $("#form2").serialize();
+
+        $.ajax({
+            type: "POST",
+            url: "modifyProv.php",
+            data: datos,
+            success: function(response){
+                let res = 
+                `<div class='container mt-2'>
+                    <div class='row justify-content-center'>
+                        <div class='col-lg-4'>
+                        <h5 class='alert alert-success alert-dismissible fade show'>${response}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </h5>
+                        </div>
+                    </div>
+                </div>`
+
+                let res2 = `<div class='container mt-2'>
+                <div class='row justify-content-center'>
+                    <div class='col-lg-4'>
+                    <h5 class='alert alert-danger alert-dismissible fade show'>${response}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </h5>
+                    </div>
+                </div>
+            </div>`
+
+                if(response=="Modificacion Exitosa"){
+                    $("#modal-response").html(res);
+                }else{
+                
+                $("#modal-response").html(res2);
+                }
+                obtenerProv();
+            }
+        });
+    
+     
+    
+    return false;
+});
+
+});/***********CIERRE DE MODIFICAR PROVEEDORES******* */
+
+
+});
+
+/******************************************************************/
+/******************************************************************/
+/*********FUNCIONES AGREGAR PROVEEDORES Y PRODUCTOS****************/
+/******************************************************************/
+/******************************************************************/
+/******************************************************************/
 

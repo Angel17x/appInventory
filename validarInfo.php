@@ -15,6 +15,7 @@ require("connect.php");
             if($nroreg!=0){
                 session_start();
                 $_SESSION['sesion']=$_POST['loginname'];
+                $_SESSION['tiempo']=time();
                 
                 if($_SESSION['sesion']=$_POST['loginname']){
                     echo "haz conectado satisfactoriamente";

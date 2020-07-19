@@ -1,5 +1,21 @@
-body {
-    background: url("../img/fondo.jpg");
+#data_prod {
+    background: url("../img/productos.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#inventario {
+    background: url("../img/inventario.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+#data_prov{
+    background: url("../img/almacen.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+#index{
+    background: url("../img/index.jpg");
     background-size: cover;
     background-attachment: fixed;
 }
@@ -55,5 +71,13 @@ footer .contenido .color:hover{
     color: rgb(0, 60, 139);
 }
 
+.btn-contenedor{
+    margin-top: 10%;
+}
+
+.btn-regresar{
+    font-size: 30px;
+    color: white;
+}
 /****************************************************************************************/
 
